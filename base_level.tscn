@@ -42,7 +42,7 @@ size = Vector3(100, 2, 100)
 material = SubResource("StandardMaterial3D_bo3yr")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 12.5, 18.5)
+transform = Transform3D(1, 0, 0, 0, 0.596225, 0.802818, 0, -0.802818, 0.596225, 0, 12.5, 18.5)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_bo3yr")
@@ -99,6 +99,22 @@ path_joined = false
 
 [node name="Enemy" parent="Path3D" instance=ExtResource("2_5vx1e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22, 0, 14)
+
+[node name="Enemy2" parent="Path3D" instance=ExtResource("2_5vx1e")]
+transform = Transform3D(-0.024008, 0, -0.999712, 0, 1, 0, 0.999712, 0, -0.024008, -17.0018, 0, 14.129)
+progress = 5.0
+
+[node name="Enemy3" parent="Path3D" instance=ExtResource("2_5vx1e")]
+transform = Transform3D(-0.0206491, 0, -0.999787, 0, 1, 0, 0.999787, 0, -0.0206491, -12.003, 0, 14.2408)
+progress = 10.0
+
+[node name="Enemy4" parent="Path3D" instance=ExtResource("2_5vx1e")]
+transform = Transform3D(-0.0166665, 0, -0.999861, 0, 1, 0, 0.999861, 0, -0.0166665, -7.00381, 0, 14.3345)
+progress = 15.0
+
+[node name="Enemy5" parent="Path3D" instance=ExtResource("2_5vx1e")]
+transform = Transform3D(-0.0112954, 0, -0.999936, 0, 1, 0, 0.999936, 0, -0.0112954, -2.00431, 0, 14.4052)
+progress = 20.0
 
 [node name="Base" parent="." instance=ExtResource("3_eesb3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 2)
