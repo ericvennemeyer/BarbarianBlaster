@@ -69,3 +69,11 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.00420749, 0.322025)
 mesh = SubResource("CylinderMesh_ttsi1")
 skeleton = NodePath("../..")
+
+[node name="ProjectileSpawnPoint" type="Marker3D" parent="TurretBase/TurretTop/BarrelBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.089103, 1.0139)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
