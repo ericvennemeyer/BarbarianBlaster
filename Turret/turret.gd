@@ -6,15 +6,15 @@ var target: PathFollow3D
 @export var turret_range: float = 10.0
 @export var projectile: PackedScene
 
-@onready var projectile_spawn_point: Marker3D = $TurretBase/TurretTop/BarrelBase/ProjectileSpawnPoint
+@onready var projectile_spawn_point: Marker3D = $TurretBase/Cannon/ProjectileSpawnPoint
+@onready var turret_base: Node3D = $TurretBase
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var barrel_base: MeshInstance3D = $TurretBase/TurretTop/BarrelBase
 
 
 func _physics_process(delta: float) -> void:
 	target = find_best_target()
 	if target:
-		look_at(target.global_position, Vector3.UP, true)
+		turret_base.look_at(target.global_position, Vector3.UP, true)
 
 
 func _on_timer_timeout() -> void:
@@ -22,10 +22,8 @@ func _on_timer_timeout() -> void:
 		var new_projectile = projectile.instantiate()
 		new_projectile.global_position = projectile_spawn_point.global_position
 		add_child(new_projectile)
-		new_projectile.direction = global_transform.basis.z
+		new_projectile.direction = turret_base.global_transform.basis.z
 		animation_player.play("fire")
-		var tween = create_tween()
-		tween.tween_property(barrel_base, "rotation:z", deg_to_rad(90), 0.1).as_relative()
 
 
 func find_best_target() -> PathFollow3D:
