@@ -152,6 +152,5 @@ label_settings = SubResource("LabelSettings_2elnx")
 [node name="DifficultyManager" parent="." instance=ExtResource("9_xjg0i")]
 
 [node name="VictoryLayer" parent="." instance=ExtResource("10_ykwpl")]
-visible = false
 
 [connection signal="stop_spawning_enemies" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemies"]
